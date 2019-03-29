@@ -15,8 +15,7 @@
             const apikey = 'ALu7LkiIIR3moIv9EV6sRz';
             // const client = filestack.init(apikey);
 
-            // const client = filestack.init('ALu7LkiIIR3moIv9EV6sRz');
-
+            // this URL has the policy and signature and *works*
             /*https://cdn.filestackcontent.com/gUdJsuHPQoqoUog8V9Cy?policy=eyJleHBpcnkiOjI1MjQ2MjYwMDAsImNhbGwiOlsicGljayIsInJlYWQiLCJzdGF0Iiwid3JpdGUiLCJ3cml0ZVVybCIsInN0b3JlIiwiY29udmVydCIsInJlbW92ZSIsImV4aWYiLCJydW5Xb3JrZmxvdyJdfQ==&signature=4b764be43ffa32d14c20d96fe343a777d3e241b8dde4bd78d8820dbb696a6eac*/
 
             const client = filestack.init(apikey, { policy: 'eyJleHBpcnkiOjI1MjQ2MjYwMDAsImNhbGwiOlsicGljayIsInJlYWQiLCJzdGF0Iiwid3JpdGUiLCJ3cml0ZVVybCIsInN0b3JlIiwiY29udmVydCIsInJlbW92ZSIsImV4aWYiLCJydW5Xb3JrZmxvdyJdfQ ==', signature: '4b764be43ffa32d14c20d96fe343a777d3e241b8dde4bd78d8820dbb696a6eac' });
@@ -38,17 +37,17 @@
                     console.log('image uploaded to: ' + theHandle);
 
 
-                    client.retrieve(theHandle, {
-                        metadata: true,
-                        extension: 'test.jpg',
-                        head: false,
-                        cache: false,
-                        dl: false,
-                    }).then((response) => {
-                        document.getElementById('response').innerHTML = JSON.stringify(response, undefined, 2);
-                    }).catch((error) => {
-                        console.error(error);
-                    });
+                    // client.retrieve(theHandle, {
+                    //     metadata: true,
+                    //     extension: 'test.jpg',
+                    //     head: false,
+                    //     cache: false,
+                    //     dl: false,
+                    // }).then((response) => {
+                    //     document.getElementById('response').innerHTML = JSON.stringify(response, undefined, 2);
+                    // }).catch((error) => {
+                    //     console.error(error);
+                    // });
 
 
                     client.retrieve(theHandle).then((blob) => {
