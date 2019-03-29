@@ -1,52 +1,74 @@
 <html>
 
-<head></head>
+<head>
+    <script src='https://static.filestackapi.com/filestack-js/2.x.x/filestack.min.js'></script>
+</head>
 
 <body>
-    <input type='file' />
-    <div class='controls'>
-        <button id='cancel'>Cancel</button>
-        <button id='pause'>Pause</button>
-        <button id='resume'>Resume</button>
-    </div>
-    <div>Progress: <span id='progress'></span></div>
-    <script src='https://static.filestackapi.com/filestack-js/2.x.x/filestack.min.js'></script>
-    <!-- <script src='https://static.filestackapi.com/filestack-js/1.x.x/filestack.min.js'></script> -->
+    <button id='upload'>Upload</button>
+    <div id='response'></div>
+    <div id='content'></div>
+    <img
+        src='https://cdn.filestackcontent.com/gUdJsuHPQoqoUog8V9Cy?policy=eyJleHBpcnkiOjI1MjQ2MjYwMDAsImNhbGwiOlsicGljayIsInJlYWQiLCJzdGF0Iiwid3JpdGUiLCJ3cml0ZVVybCIsInN0b3JlIiwiY29udmVydCIsInJlbW92ZSIsImV4aWYiLCJydW5Xb3JrZmxvdyJdfQ==&signature=4b764be43ffa32d14c20d96fe343a777d3e241b8dde4bd78d8820dbb696a6eac'>
+    <script>
+        window.addEventListener('DOMContentLoaded', function () {
+            const apikey = 'ALu7LkiIIR3moIv9EV6sRz';
+            // const client = filestack.init(apikey);
 
-<script>
-    window.addEventListener('DOMContentLoaded', function () {
-        const apikey = 'ALu7LkiIIR3moIv9EV6sRz';
-        const client = filestack.init(apikey);
+            // const client = filestack.init('ALu7LkiIIR3moIv9EV6sRz');
 
-        const onProgress = (evt) => {
-            document.getElementById('progress').innerHTML = `${evt.totalPercent}%`;
-        };
+            /*https://cdn.filestackcontent.com/gUdJsuHPQoqoUog8V9Cy?policy=eyJleHBpcnkiOjI1MjQ2MjYwMDAsImNhbGwiOlsicGljayIsInJlYWQiLCJzdGF0Iiwid3JpdGUiLCJ3cml0ZVVybCIsInN0b3JlIiwiY29udmVydCIsInJlbW92ZSIsImV4aWYiLCJydW5Xb3JrZmxvdyJdfQ==&signature=4b764be43ffa32d14c20d96fe343a777d3e241b8dde4bd78d8820dbb696a6eac*/
 
-        document.querySelector('input').addEventListener('change', (event) => {
-            const files = event.target.files;
-            const file = files.item(0);
-            const token = {};
-            const cancel = document.getElementById('cancel');
-            const pause = document.getElementById('pause');
-            const resume = document.getElementById('resume');
+            const client = filestack.init(apikey, { policy: 'eyJleHBpcnkiOjI1MjQ2MjYwMDAsImNhbGwiOlsicGljayIsInJlYWQiLCJzdGF0Iiwid3JpdGUiLCJ3cml0ZVVybCIsInN0b3JlIiwiY29udmVydCIsInJlbW92ZSIsImV4aWYiLCJydW5Xb3JrZmxvdyJdfQ ==', signature: '4b764be43ffa32d14c20d96fe343a777d3e241b8dde4bd78d8820dbb696a6eac' });
 
-            [cancel, resume, pause].forEach((btn) => {
-                const id = btn.id;
-                btn.addEventListener('click', () => {
-                    token[id]();
-                });
-            });
 
-            client.upload(file, { onProgress }, {}, token)
-                .then(res => {
-                    console.log('success: ', res)
-                })
-                .catch(err => {
-                    console.log(err)
-                });
+            const options = {
+                maxFiles: 1,
+                uploadInBackground: false,
+                // imageMax resizes image to a maximum size
+                imageMax: [800, 600],
+                imageMin: [40, 30],
+                // maxSize is in bytes, it is set to limit the file upload to 10MB
+                // maxSize: 1024000,
+                // onOpen could be used if we want to know that the modal is opened
+                // onOpen: () => console.log('opened!'),
+                // onUploadDone gives us the uploaded image handle to put in our db
+                onUploadDone: (res) => {
+                    let theHandle = res.filesUploaded[0].handle;
+                    console.log('image uploaded to: ' + theHandle);
+
+
+                    client.retrieve(theHandle, {
+                        metadata: true,
+                        extension: 'test.jpg',
+                        head: false,
+                        cache: false,
+                        dl: false,
+                    }).then((response) => {
+                        document.getElementById('response').innerHTML = JSON.stringify(response, undefined, 2);
+                    }).catch((error) => {
+                        console.error(error);
+                    });
+
+
+                    client.retrieve(theHandle).then((blob) => {
+                        const urlCreator = window.URL || window.webkitURL;
+                        const img = document.createElement('img');
+                        // we set the width *or* height as we wish for different contexts
+                        // img.width = 720;
+                        img.height = 200;
+                        img.src = urlCreator.createObjectURL(blob);
+                        document.getElementById('content').appendChild(img)
+                    }).catch((error) => {
+                        console.error(error);
+                    });
+                }
+            };
+            document.getElementById('upload').onclick = function () { client.picker(options).open(); };
+
+            // client.picker(options).open();
         });
-    });
-</script>
+    </script>
 </body>
 
 </html>
