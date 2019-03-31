@@ -1,0 +1,456 @@
+.hero-full-screen {
+  height: 100vh;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background: url("https://www.tokkoro.com/picsup/2513071-desktop-nature-wallpaper.jpg") center center no-repeat;
+  background-size: cover;
+  /* background: linear-gradient(rgba(255, 0, 0, 0.5), rgba(0, 255, 0, 0.5), rgba(0, 0, 255, 0.5)); */
+}
+
+/*Here I'm testing the white overlay, which I like, at least for the other pages, but don't know how to keep it from doing it to the map
+/* .layer {
+  background-color: rgba(248, 247, 216, 0.7);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.layer-none {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+} */
+
+.hero-full-screen .middle-content-section {
+  text-align: center;
+  color: #fefefe;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.hero-full-screen .top-content-section {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.35);
+}
+
+.hero-full-screen .bottom-content-section {
+  padding: 1rem;
+}
+
+.hero-full-screen .bottom-content-section svg {
+  height: 3.75rem;
+  width: 3.75rem;
+  fill: #fefefe;
+}
+
+.hero-full-screen .top-bar {
+  background: transparent;
+}
+
+.hero-full-screen .top-bar .menu {
+  background: transparent;
+}
+
+.hero-full-screen .top-bar .menu-text {
+  color: #fefefe;
+}
+
+.hero-full-screen .top-bar .menu li {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.hero-full-screen .top-bar .menu a {
+  color: #fefefe;
+  font-weight: bold;
+}
+
+/* Begin top bar nav */ 
+.topbar-responsive {
+  background: #2c3840;
+  padding: 1rem 1.5rem;
+}
+
+.topbar-responsive .topbar-responsive-logo {
+  color: #fefefe;
+  vertical-align: middle;
+}
+
+.topbar-responsive .menu {
+  background: #2c3840;
+}
+
+.topbar-responsive .menu li:last-of-type {
+  margin-right: 0;
+}
+
+.topbar-responsive .menu a {
+  color: #fefefe;
+  transition: color 0.15s ease-in;
+}
+
+.topbar-responsive .menu a:hover {
+  color: #c6d1d8;
+}
+
+@media screen and (max-width: 39.9375em) {
+  .topbar-responsive .menu a {
+    padding: 0.875rem 0;
+  }
+}
+
+.topbar-responsive .menu .topbar-responsive-button {
+  color: #fefefe;
+  border-color: #fefefe;
+  border-radius: 5000px;
+  transition: color 0.15s ease-in, border-color 0.15s ease-in;
+}
+
+.topbar-responsive .menu .topbar-responsive-button:hover {
+  color: #c6d1d8;
+  border-color: #c6d1d8;
+}
+
+@media screen and (max-width: 39.9375em) {
+  .topbar-responsive .menu .topbar-responsive-button {
+    width: 100%;
+    margin: 0.875rem 0;
+  }
+}
+
+@media screen and (max-width: 39.9375em) {
+  .topbar-responsive {
+    padding: 0.75rem;
+  }
+  .topbar-responsive .top-bar-title {
+    position: relative;
+    width: 100%;
+  }
+  .topbar-responsive .top-bar-title span {
+    position: absolute;
+    right: 0;
+    border: 1px solid #fefefe;
+    border-radius: 5px;
+    padding: 0.25rem 0.45rem;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+  }
+  .topbar-responsive .top-bar-title span .menu-icon {
+    margin-bottom: 4px;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes slideDown {
+  0% {
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+  }
+  100% {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+  }
+}
+
+@keyframes slideDown {
+  0% {
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+  }
+  100% {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+  }
+}
+
+@media screen and (max-width: 39.9375em) {
+  .topbar-responsive-links {
+    -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+    -webkit-animation-duration: 0.5s;
+            animation-duration: 0.5s;
+    width: 100%;
+    -webkit-animation: fadeIn 1s ease-in;
+            animation: fadeIn 1s ease-in;
+  }
+}
+/* End top bar nav   */
+
+/* Below here I'm testing out how to the full screen overlay to work. */
+/* .overlay{
+  background: rgba(0,0,0,0.5);
+  margin: 0px;
+  width: 100%;
+  height: 100%;
+} */
+
+/* Here I'm testing spacing and alignment for tree icon and home page title */
+.imageclass {
+  float:left;
+  /* width:200px; */
+}
+
+.textclass {
+  float:left;
+  width:300px;
+}
+
+.textcolor{
+  font-weight: bold;
+  color: rgb(0, 153, 51);
+  font-size: 24px;
+  background-color: rgb(255, 255, 204);
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.text-box {
+  font-weight: bold;
+  color: rgb(0, 153, 51);
+  font-size: 24px;
+  background-color: rgb(255, 255, 204);
+  padding: 10px 10px 10px 10px;
+}
+
+/* Begin CSS for Login form */
+.translucent-form-overlay {
+  max-width: 500px;
+  width: 100%;
+  background-color: rgba(54, 54, 54, 0.8);
+  padding: 20px;
+  color: #fefefe;
+}
+
+.translucent-form-overlay .columns.row {
+  display: block;
+}
+
+.translucent-form-overlay h3, .translucent-form-overlay label {
+  color: #fefefe;
+}
+
+.translucent-form-overlay input, .translucent-form-overlay select {
+  color: #8a8a8a;
+}
+
+.translucent-form-overlay input::-webkit-input-placeholder {
+  color: #8a8a8a;
+}
+
+.translucent-form-overlay input:-ms-input-placeholder {
+  color: #8a8a8a;
+}
+
+.translucent-form-overlay input::placeholder {
+  color: #8a8a8a;
+}
+
+.show-password {
+  width: 100%;
+
+  label {
+    position: absolute;
+    left:-9999px;
+    text-indent: -9999px;
+  }
+}
+
+.password-wrapper {
+  position: relative;
+}
+
+.password + .unmask {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  text-indent: -9999px;
+  width: 25px;
+  height: 25px;
+  background: #aaa;
+  border-radius: 50%;
+  cursor:pointer;
+  border: none;
+  -webkit-appearance:none;
+}
+
+.password + .unmask:before {
+  content: "";
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 17px;
+  height: 17px;
+  background: #e3e3e3;
+  z-index:1;
+  border-radius: 50%;
+}
+
+.password[type="text"] + .unmask:after {
+  content: "";
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  width: 13px;
+  height: 13px;
+  background: #aaa;
+  z-index: 2;
+  border-radius: 50%;
+}
+/* End CSS for Login form */
+
+.floated-label-wrapper {
+  position: relative;
+
+  label {
+    background: $white;
+    color: $primary-color;
+    font-size: 0.75rem;
+    font-weight: 600;
+    left: 0.75rem;
+    opacity: 0;
+    padding: 0 0.25rem;
+    position: absolute;
+    top: 2rem;
+    transition: all 0.15s ease-in;
+    z-index: -1;
+
+    input[type=text],
+    input[type=email],
+    input[type=password] {
+      border-radius: 4px;
+      font-size: 1.75em;
+      padding: 0.5em;
+    }
+
+    &.show {
+      opacity: 1;
+      top: -0.85rem;
+      z-index: 1;
+      transition: all 0.15s ease-in;
+    }
+  }
+}
+
+/* For testing REgistration form */
+
+.translucent-form-overlay {
+  max-width: 500px;
+  width: 100%;
+  background-color: rgba(54, 54, 54, 0.8);
+  padding: 20px;
+  color: #fefefe;
+}
+
+.translucent-form-overlay .columns.row {
+  display: block;
+}
+
+.translucent-form-overlay h3, .translucent-form-overlay label {
+  color: #fefefe;
+}
+
+.translucent-form-overlay input, .translucent-form-overlay select {
+  color: #8a8a8a;
+}
+
+.translucent-form-overlay input::-webkit-input-placeholder {
+  color: #8a8a8a;
+}
+
+.translucent-form-overlay input:-ms-input-placeholder {
+  color: #8a8a8a;
+}
+
+.translucent-form-overlay input::placeholder {
+  color: #8a8a8a;
+}
+
+
+form .form-icons {
+  text-align: center;
+}
+
+form .form-icons h4 {
+  margin-bottom: 1rem;
+}
+
+form .form-icons .input-group-label {
+  background-color: #1779ba;
+  border-color: #1779ba;
+}
+
+form .form-icons .input-group-field {
+  border-color: #1779ba;
+}
+
+form .form-icons .fa {
+  color: white;
+  width: 1rem;
+}
+/* Profile Page CSS */
+.profile-container {
+  margin-left: 75px;
+}
+#my-info {
+  margin-top:120px;
+}
+#profile-info{
+  margin-left:30px;
+  padding: 5px, 5px, 5px, 5px;
+  margin-bottom:30px;
+}
+.large-up-4 .column p {
+  color:white;
+}
+#tree-header {
+  text-align: center;
+  color: #fefefe;
+  background: rgba(0, 0, 0, 0.5);
+}
+#contact-me {
+  color:white;
+}
+#image-button {
+  align-items: center;
+}
+
+.profiletxt{
+  color:white;
+  font-weight: bold;
+}
