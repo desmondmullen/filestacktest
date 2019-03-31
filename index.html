@@ -2,212 +2,112 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!-- Compressed Foundation CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.5.3/dist/css/foundation.min.css"
-        integrity="sha256-xpOKVlYXzQ3P03j397+jWFZLMBXLES3IiryeClgU5og= sha384-gP4DhqyoT9b1vaikoHi9XQ8If7UNLO73JFOOlQV1RATrA7D0O7TjJZifac6NwPps sha512-AKwIib1E+xDeXe0tCgbc9uSvPwVYl6Awj7xl0FoaPFostZHOuDQ1abnDNCYtxL/HWEnVOMrFyf91TDgLPi9pNg=="
-        crossorigin="anonymous">
-    <!-- Compressed CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
-    <link rel="stylesheet" href="/assets/css/style.css" type="text/css" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.1/moment.js"></script>
-    <script src="https://code.jquery.com/jquery.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
-        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-        crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
-        integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
-        integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
-        crossorigin="anonymous"></script>
-    <!-- Compressed Foundation JavaScript -->
-    <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.5.3/dist/js/foundation.min.js"
-        integrity="sha256-/PFxCnsMh+nTuM0k3VJCRch1gwnCfKjaP8rJNq5SoBg= sha384-9ksAFjQjZnpqt6VtpjMjlp2S0qrGbcwF/rvrLUg2vciMhwc1UJJeAAOLuJ96w+Nj sha512-UMSn6RHqqJeJcIfV1eS2tPKCjzaHkU/KqgAnQ7Nzn0mLicFxaVhm9vq7zG5+0LALt15j1ljlg8Fp9PT1VGNmDw=="
-        crossorigin="anonymous"></script>
-    <script src='https://static.filestackapi.com/filestack-js/2.x.x/filestack.min.js'></script>
-    <script src="logic.js"></script>
-    <script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBPchfMQ9Do2TWSFQTKjKJlitT5y_Fdrdc&libraries=places&callback=initMap">
-        </script>
-    <style>
-        /* Always set the map height explicitly to define the size of the div
-		       * element that contains the map. */
-        #map {
-            height: 70%;
-        }
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<!-- Compressed Foundation CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.5.3/dist/css/foundation.min.css" integrity="sha256-xpOKVlYXzQ3P03j397+jWFZLMBXLES3IiryeClgU5og= sha384-gP4DhqyoT9b1vaikoHi9XQ8If7UNLO73JFOOlQV1RATrA7D0O7TjJZifac6NwPps sha512-AKwIib1E+xDeXe0tCgbc9uSvPwVYl6Awj7xl0FoaPFostZHOuDQ1abnDNCYtxL/HWEnVOMrFyf91TDgLPi9pNg==" crossorigin="anonymous">
+	<!-- Compressed CSS -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+	<link rel="stylesheet" href="/assets/css/style.css" type="text/css"/>
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.1/moment.js"></script>
+	<script src="https://code.jquery.com/jquery.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+	{{!-- Remove these two bootstrap after all bootstrap references are cleared out from views --}}
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+	<!-- Compressed Foundation JavaScript -->
+	<script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.5.3/dist/js/foundation.min.js"
+		integrity="sha256-/PFxCnsMh+nTuM0k3VJCRch1gwnCfKjaP8rJNq5SoBg= sha384-9ksAFjQjZnpqt6VtpjMjlp2S0qrGbcwF/rvrLUg2vciMhwc1UJJeAAOLuJ96w+Nj sha512-UMSn6RHqqJeJcIfV1eS2tPKCjzaHkU/KqgAnQ7Nzn0mLicFxaVhm9vq7zG5+0LALt15j1ljlg8Fp9PT1VGNmDw=="
+		crossorigin="anonymous"></script>
+	{{!-- Filestack scripts --}}
+	<script src='https://static.filestackapi.com/filestack-js/2.x.x/filestack.min.js'></script>
+	<script src="logic.js"></script>
+	<script async defer
+		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBPchfMQ9Do2TWSFQTKjKJlitT5y_Fdrdc&libraries=places&callback=initMap">
+	</script>
+	<style>
+		/* Always set the map height explicitly to define the size of the div
+	       * element that contains the map. */
+		#map {
+			height: 70%;
+		}
+	
+		/* Optional: Makes the sample page fill the window. */
+		html,
+		body {
+			height: 100%;
+			margin: 0;
+			padding: 0;
+		}
+	</style>
 
-        /* Optional: Makes the sample page fill the window. */
-        html,
-        body {
-            height: 100%;
-            margin: 0;
-            padding: 0;
-        }
-
-        #content {
-            height: 30%;
-        }
-    </style>
-    <title>Go Tree Urself</title>
+	<title>Go Tree Urself</title>
 </head>
 
 <body>
-    ' body '
-    <div id="map"></div>
-    <script>
-        var userLatitude = 35.8235;
-        var userLongitude = -78.8256;
-        var initMapLatLong;
-        var map;
-        var request;
+	{{{ body }}}
+  <script src="/assets/js/app.js"></script>
+  <script>
+		var userLatitude = 35.8235; // these are used for testing
+		var userLongitude = -78.8256; // because we're not geolocating yet
+		var initMapLatLong;
+		var map;
 
-        function getLocation() {
-            if (navigator.geolocation) {
-                navigator.geolocation.getCurrentPosition(showPosition);
-            } else {
-                geolocationStatusField.text("Geolocation is not supported by this browser");
-            }
-        };
+		function getLocation() {
+			if (navigator.geolocation) {
+				navigator.geolocation.getCurrentPosition(showPosition);
+			} else {
+				console.log("Geolocation is not supported by this browser");
+			}
+		};
 
-        function showPosition(position) {
-            userLatitude = parseFloat(position.coords.latitude);
-            userLongitude = parseFloat(position.coords.longitude);
-            if (initMapLatLong != userLatitude, userLongitude) {
-                console.log("redoing initMap: " + initMapLatLong + " / " + userLatitude, userLongitude);
-                initMap();
-            } else {
-                console.log("show position: " + userLatitude, userLongitude);
-            }
-        };
+		function showPosition(position) {
+			userLatitude = parseFloat(position.coords.latitude);
+			userLongitude = parseFloat(position.coords.longitude);
+			if (initMapLatLong != userLatitude, userLongitude) {
+				console.log("redoing initMap: " + initMapLatLong + " / " + userLatitude, userLongitude);
+				initMap();
+			} else {
+				console.log("show position: " + userLatitude, userLongitude);
+			}
+		};
 
-        function initMap() {
-            console.log("init map: " + userLatitude, userLongitude);
-            initMapLatLong = userLatitude, userLongitude;
-            var userLatLong = { lat: userLatitude, lng: userLongitude };
-            map = new google.maps.Map(document.getElementById("map"), {
-                zoom: 2,
-                center: userLatLong
-            });
-            var marker = new google.maps.Marker({
-                position: userLatLong,
-                map: map,
-                title: "You are here"
-            });
-        };
+		function initMap() {
+			console.log("init map: " + userLatitude, userLongitude);
+			initMapLatLong = userLatitude, userLongitude;
+			var userLatLong = { lat: userLatitude, lng: userLongitude };
+			map = new google.maps.Map(document.getElementById("map"), {
+				zoom: 2,
+				center: userLatLong
+			});
+			var marker = new google.maps.Marker({
+				position: userLatLong,
+				map: map,
+				title: "You are here"
+			});
+		};
 
-        function placeMarker(latitude, longitude) {
-            var iconBase =
-                'http://maps.google.com/mapfiles/';
-            var icons = {
-                tree: {
-                    icon: 'parks_small.png'
-                },
-                caution: {
-                    icon: iconBase + 'kml/shapes/caution.png'
-                }
-            };
-            // let oceanCheckUrl = `https://secure.geonames.org/oceanJSON?formatted=true&lat=${latitude}&lng=${longitude}&username=angiespong&style=full`
-            // $.get(oceanCheckUrl, function (response, status) {
-            //     console.log(response);
-            //     if (!Object.keys(response).includes('ocean')) {
-            var userLatLong = { lat: latitude, lng: longitude };
-            var marker = new google.maps.Marker({
-                position: userLatLong,
-                map: map,
-                icon: icons.tree.icon,
-            });
-            // }
-            // });
-        };
-
-        window.addEventListener('DOMContentLoaded', function () {
-            // we will hide this key and the security.policy and
-            // security.signature in our .env file
-            const apikey = 'ALu7LkiIIR3moIv9EV6sRz';
-
-            const clientOptions = {
-                security: {
-                    policy: 'eyJleHBpcnkiOjI1MjQ2MjYwMDAsImNhbGwiOlsicGljayIsInJlYWQiLCJzdGF0Iiwid3JpdGUiLCJ3cml0ZVVybCIsInN0b3JlIiwiY29udmVydCIsInJlbW92ZSIsImV4aWYiLCJydW5Xb3JrZmxvdyJdfQ==',
-                    signature: '4b764be43ffa32d14c20d96fe343a777d3e241b8dde4bd78d8820dbb696a6eac'
-                }
-            };
-
-            const client = filestack.init(apikey, clientOptions);
-
-            const options = {
-                cleanupImageExif: false,
-                maxFiles: 1,
-                uploadInBackground: false,
-                // imageMax resizes image to a maximum size
-                imageMax: [800, 600],
-                imageMin: [40, 30],
-                // maxSize is in bytes, it is set to limit the file upload to 10.5MB
-                maxSize: 10500000,
-                // onOpen could be used if we want to know that the modal is opened
-                // onOpen: () => console.log('opened!'),
-                onUploadDone: (res) => {
-                    let theHandle = res.filesUploaded[0].handle;
-                    console.log('image handle: ' + theHandle);
-                    console.log('image url: ' + res.filesUploaded[0].url);
-                    // put theHandle into our database, that's the image
-                    // the user uploaded
-
-                    // the following block returns exif data which may include GPS
-                    // if we don't get GPS data out of this then we can geolocate
-                    // the device or ask the user to enter an address
-                    client.metadata(theHandle, { exif: true })
-                        .then((res) => {
-                            // extract and parse the geotag data
-                            let latitudeRef = res.exif['GPS GPSLatitudeRef'];
-                            let latitudeArray = res.exif['GPS GPSLatitude'].substring(1);
-                            latitudeArray = (latitudeArray.slice(0, -1)).split(', ');
-                            let longitudeRef = res.exif['GPS GPSLongitudeRef'];
-                            let longitudeArray = res.exif['GPS GPSLongitude'].substring(1);
-                            longitudeArray = (longitudeArray.slice(0, -1)).split(', ');
-
-                            // convert degrees, minutes, seconds into decimal
-                            let latitude = convertDMSToDD(latitudeArray[0], latitudeArray[1], (latitudeArray[2].split('/')[0] / latitudeArray[2].split('/')[1]), latitudeRef);
-                            console.log('latitude: ' + latitude);
-                            // put latitude into database
-
-                            let longitude = convertDMSToDD(longitudeArray[0], longitudeArray[1], (longitudeArray[2].split('/')[0] / longitudeArray[2].split('/')[1]), longitudeRef);
-                            console.log('longitude: ' + longitude);
-                            // put longitude into database
-
-                            placeMarker(latitude, longitude);
-                        })
-                        .catch((err) => {
-                            console.log(err);
-                        });
-
-                    // the following block retrieves the image
-                    client.retrieve(theHandle).then((blob) => {
-                        const urlCreator = window.URL || window.webkitURL;
-                        const img = document.createElement('img');
-                        // we set the width *or* height as we wish for different contexts
-                        // img.width = 720;
-                        img.height = 200;
-                        img.src = urlCreator.createObjectURL(blob);
-                        document.getElementById('content').appendChild(img)
-                    }).catch((error) => {
-                        console.error(error);
-                    });
-                }
-            };
-
-            function convertDMSToDD(degrees, minutes, seconds, direction) {
-                var dd = parseInt(degrees) + minutes / 60 + seconds / 3600;
-                if (direction == "S" || direction == "W") {
-                    dd = dd * -1;
-                } // Don't do anything for N or E
-                return dd;
-            };
-        });
-
-    </script>
+		function placeMarker(latitude, longitude) {
+			var iconBase =
+				'http://maps.google.com/mapfiles/';
+			var icons = {
+				tree: {
+					icon: 'parks_small.png'
+				},
+				caution: {
+					icon: iconBase + 'kml/shapes/caution.png'
+				}
+			};
+			var userLatLong = { lat: latitude, lng: longitude };
+			var marker = new google.maps.Marker({
+				position: userLatLong,
+				map: map,
+				icon: icons.tree.icon,
+			});
+		};
+	</script>
 </body>
 
 </html>
