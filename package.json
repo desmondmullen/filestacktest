@@ -37,7 +37,7 @@
   },
   "homepage": "https://github.com/alperg/project2-starter-auth#readme",
   "dependencies": {
-    "bcrypt": "^3.0.0",
+    "bcrypt": "^5.0.0",
     "connect-session-sequelize": "^6.0.0",
     "cookie-parser": "^1.4.3",
     "dotenv": "^7.0.0",
