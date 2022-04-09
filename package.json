@@ -46,7 +46,7 @@
     "express-session": "^1.15.6",
     "filestack-js": "^2.0.3",
     "helmet": "^3.16.0",
-    "moment": "^2.24.0",
+    "moment": "^2.29.2",
     "morgan": "^1.9.1",
     "mysql2": "^1.6.5",
     "passport": "^0.4.0",
